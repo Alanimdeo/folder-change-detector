@@ -1,0 +1,17 @@
+{
+  "name": "folder-change-detector",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "author": "Alanimdeo",
+  "license": "MIT",
+  "scripts": {
+    "start": "supervisor dist/index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.9",
+    "supervisor": "^0.12.0"
+  }
+}
