@@ -1,7 +1,9 @@
 import chokidar from "chokidar";
 
 const targetDir = "";
-const watcher = chokidar.watch(targetDir, {});
+const watcher = chokidar.watch(targetDir, {
+  ignored: (f) => f.includes("@eaDir"),
+});
 
 console.log("스캔 중...");
 watcher.on("ready", () => {
