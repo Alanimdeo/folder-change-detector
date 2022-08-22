@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const chokidar_1 = __importDefault(require("chokidar"));
 const targetDir = "";
-const watcher = chokidar_1.default.watch(targetDir, {});
+const watcher = chokidar_1.default.watch(targetDir, {
+    ignored: (f) => f.includes("@eaDir"),
+});
 console.log("스캔 중...");
 watcher.on("ready", () => {
     console.log("스캔 완료. 이제부터 파일 변경을 감지합니다.");
