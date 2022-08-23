@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Config",
+  "type": "object",
+  "required": ["watchDir", "interval", "ntfyAddress", "authentication"],
+  "properties": {
+    "watchDir": {
+      "type": "string",
+      "description": "Directory to watch for changes."
+    },
+    "interval": {
+      "type": "number",
+      "description": "Set the frequency(seconds) to send messages. If set to 0, the message is sent as soon as the file is added.",
+      "minimum": 0
+    },
+    "ntfyAddress": {
+      "type": "string",
+      "description": "ntfy Topic address to send messages."
+    },
+    "authentication": {
+      "type": "object",
+      "description": "Authentication settings.",
+      "required": ["enabled"],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable authentication."
+        },
+        "username": {
+          "type": "string",
+          "description": "Username to use for authentication."
+        },
+        "password": {
+          "type": "string",
+          "description": "Password to use for authentication."
+        }
+      }
+    },
+    "defaultTitle": {
+      "type": "string",
+      "description": "Default title of the message. If not set, it will be set to 'Photos'."
+    }
+  }
+}
