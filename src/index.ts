@@ -13,7 +13,6 @@ export interface Config {
 const config: Config = JSON.parse(readFileSync("./config.json", "utf-8"), (key, value) =>
   key === "$schema" ? undefined : value
 );
-console.log(config);
 
 const watcher = watch(config.watchDir, {
   ignored: (f) => f.includes("@eaDir"),

@@ -4,7 +4,6 @@ const fs_1 = require("fs");
 const chokidar_1 = require("chokidar");
 const ntfy_1 = require("./ntfy");
 const config = JSON.parse((0, fs_1.readFileSync)("./config.json", "utf-8"), (key, value) => key === "$schema" ? undefined : value);
-console.log(config);
 const watcher = (0, chokidar_1.watch)(config.watchDir, {
     ignored: (f) => f.includes("@eaDir"),
 });
